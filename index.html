@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アジア諸地域の繁栄と日本 まとめ＆クイズ</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;background:#f5f4f0;color:#1a1a18;line-height:1.7;font-size:16px;}
+.header{background:#185FA5;color:#fff;padding:1.2rem 1.5rem;text-align:center;}
+.header h1{font-size:18px;font-weight:500;margin-bottom:4px;}
+.header p{font-size:13px;opacity:.85;}
+.container{max-width:680px;margin:0 auto;padding:1rem;}
+.tabs{display:flex;gap:4px;border-bottom:1px solid #d3d1c7;margin-bottom:1.5rem;overflow-x:auto;}
+.tab{padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:none;color:#888780;border-bottom:2px solid transparent;margin-bottom:-1px;border-radius:0;white-space:nowrap;flex-shrink:0;}
+.tab.active{color:#185FA5;border-bottom-color:#185FA5;}
+.page{display:none;}.page.active{display:block;}
+.sec{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#888780;margin:1.75rem 0 .6rem;padding-bottom:4px;border-bottom:1px solid #d3d1c7;}
+.card{background:#fff;border:1px solid #d3d1c7;border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;}
+.tribute-wrap{display:flex;align-items:center;justify-content:center;margin:1rem 0;flex-wrap:wrap;gap:6px;}
+.t-box{text-align:center;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:500;min-width:90px;}
+.t-china{background:#B5D4F4;color:#0C447C;border:1.5px solid #378ADD;}
+.t-neighbor{background:#C0DD97;color:#27500A;border:1.5px solid #639922;}
+.t-arrow{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:#888780;}
+.t-arrow .ar{font-size:22px;color:#5F5E5A;}
+.window-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;}
+.w-box{border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.6;}
+.w-nagasaki{background:#E6F1FB;border:1px solid #378ADD;color:#0C447C;}
+.w-tsushima{background:#EAF3DE;border:1px solid #639922;color:#27500A;}
+.w-satsuma{background:#FAEEDA;border:1px solid #BA7517;color:#633806;}
+.w-matsumae{background:#FAECE7;border:1px solid #D85A30;color:#712B13;}
+.w-title{font-weight:500;margin-bottom:4px;}
+.tl{position:relative;padding-left:22px;margin:6px 0;}
+.tl::before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:#d3d1c7;}
+.tl-item{position:relative;margin-bottom:10px;font-size:13px;line-height:1.5;}
+.tl-item::before{content:'';position:absolute;left:-18px;top:5px;width:8px;height:8px;border-radius:50%;background:#378ADD;}
+.yr{display:inline-block;background:#185FA5;color:#fff;font-size:11px;font-weight:500;padding:1px 7px;border-radius:20px;margin-right:5px;}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:6px 0;font-size:13px;}
+.fb{background:#f1efe8;border:1px solid #b4b2a9;border-radius:8px;padding:5px 10px;font-weight:500;}
+.fa{color:#888780;}
+.bubble{border:2px solid;border-radius:12px;padding:9px 13px;font-size:13px;line-height:1.6;margin:7px 0;}
+.bc{border-color:#D85A30;background:#FAECE7;color:#712B13;}
+.note{font-size:12px;color:#5F5E5A;line-height:1.7;margin-top:8px;padding-top:8px;border-top:1px solid #d3d1c7;}
+.trade-table{width:100%;font-size:13px;border-collapse:collapse;}
+.trade-table th{background:#f1efe8;font-weight:500;padding:6px 10px;text-align:left;border:1px solid #d3d1c7;}
+.trade-table td{padding:6px 10px;border:1px solid #d3d1c7;line-height:1.5;vertical-align:top;}
+.import-bg{background:#E6F1FB;color:#0C447C;}
+.export-bg{background:#FAECE7;color:#712B13;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+.mini-card{text-align:center;padding:10px 6px;background:#f1efe8;border-radius:8px;}
+.mini-card .mc-title{font-weight:500;font-size:13px;}
+.mini-card .mc-sub{font-size:12px;color:#5F5E5A;margin-top:4px;}
+.qcard{background:#fff;border:1px solid #d3d1c7;border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;}
+.qq{font-size:14px;font-weight:500;margin-bottom:10px;}
+.qopts{display:flex;flex-direction:column;gap:7px;}
+.qbtn{background:#f1efe8;border:1px solid #b4b2a9;border-radius:8px;padding:9px 13px;font-size:13px;cursor:pointer;text-align:left;color:#1a1a18;transition:background .12s;}
+.qbtn:hover{background:#d3d1c7;}
+.qbtn.ok{background:#EAF3DE;border-color:#639922;color:#27500A;}
+.qbtn.ng{background:#FCEBEB;border-color:#A32D2D;color:#501313;}
+.qres{margin-top:8px;padding:7px 11px;border-radius:8px;font-size:13px;display:none;}
+.rok{background:#EAF3DE;color:#27500A;}
+.rng{background:#FCEBEB;color:#501313;}
+.score-bar{display:flex;align-items:center;gap:8px;margin-bottom:1rem;background:#fff;border:1px solid #d3d1c7;border-radius:8px;padding:10px 14px;}
+.score-num{font-size:20px;font-weight:500;color:#185FA5;}
+.final-box{background:#f1efe8;border-radius:12px;padding:1.25rem;text-align:center;margin-top:1rem;}
+.final-big{font-size:36px;font-weight:500;color:#185FA5;}
+.reset-btn{margin-top:1rem;padding:8px 20px;border-radius:8px;border:1px solid #b4b2a9;background:#fff;cursor:pointer;font-size:13px;}
+.kw{display:inline-block;background:#f1efe8;border:1px solid #b4b2a9;border-radius:8px;padding:3px 9px;font-size:12px;font-weight:500;margin:3px;}
+.ryukyu-center{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:8px 0;}
+.ry-box{text-align:center;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:500;}
+.ry-china{background:#B5D4F4;color:#0C447C;}
+.ry-main{background:#FAEEDA;border:2px solid #BA7517;color:#633806;padding:14px 18px;font-size:14px;}
+.ry-japan{background:#C0DD97;color:#27500A;}
+.ry-arrow{font-size:20px;color:#888780;}
+.compare-col{font-weight:500;font-size:13px;margin-bottom:6px;}
+strong{font-weight:600;}
+@media(max-width:480px){
+  .window-grid{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .three-col{grid-template-columns:1fr 1fr;}
+  .tribute-wrap{flex-direction:column;align-items:center;}
+  .t-arrow .ar{transform:rotate(90deg);}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>アジア諸地域の繁栄と日本 まとめ＆クイズ</h1>
+  <p>タブを切り替えて使ってね！</p>
+</div>
+
+<div class="container">
+
+<div class="tabs">
+  <button class="tab active" onclick="sp('summary')">①明・清</button>
+  <button class="tab" onclick="sp('edo')">②江戸の外交</button>
+  <button class="tab" onclick="sp('ryukyu')">③琉球・アイヌ</button>
+  <button class="tab" onclick="sp('quiz')">クイズ</button>
+</div>
+
+<!-- ===== ① 明・清 ===== -->
+<div id="page-summary" class="page active">
+
+  <p class="sec">朝貢体制のしくみ（図解）</p>
+  <div class="card">
+    <div class="tribute-wrap">
+      <div class="t-box t-neighbor">周辺国<br><small>（朝鮮・琉球など）</small></div>
+      <div class="t-arrow"><span>貢物を持参</span><span class="ar">→</span></div>
+      <div class="t-box t-china">明（中国）<br>皇帝</div>
+      <div class="t-arrow"><span>数倍の返礼品</span><span class="ar">→</span></div>
+      <div class="t-box t-neighbor">周辺国<br>経済が活性化</div>
+    </div>
+    <div class="note">
+      明から与えられる銅銭・生糸・絹織物が周辺国の経済を潤した。ただし民間の自由な貿易は制限された。<br>
+      ムスリムの宦官・<strong>鄭和</strong>が大艦隊で東南アジア・インド洋に派遣され、諸国に朝貢をうながした（1405〜1433）。
+    </div>
+  </div>
+
+  <p class="sec">倭寇と朝貢体制の動揺</p>
+  <div class="card">
+    <div style="display:flex;align-items:flex-start;gap:10px;">
+      <span style="font-size:28px;">🏴‍☠️</span>
+      <div>
+        <div class="bubble bc">「大航海時代」で商業が活発化 → 明の貿易制限に不満な<strong>中国人＋日本人まじりの商人集団</strong>が密貿易・略奪 → 中国側は「<strong>倭寇</strong>」と呼んだ</div>
+        <div class="note">なぜ取り締まれなかった？ → 日本が戦国時代で国内バラバラ。統一した命令が出せなかった。<br>最終的に<strong>ポルトガル人</strong>が日中間貿易の担い手になった。</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="sec">明→清への交代（年表）</p>
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item"><span class="yr">16C初</span>中国東北地方で<strong>女真（満洲）人</strong>の政権が成長</div>
+      <div class="tl-item"><span class="yr">17C初</span><strong>後金</strong>を建国 → のちに<strong>清</strong>と改称。朝鮮を服属させる</div>
+      <div class="tl-item"><span class="yr">1644</span>明が農民反乱で滅亡。清が北京を首都に大帝国を建設</div>
+      <div class="tl-item"><span class="yr">18C</span>康煕帝など有能な皇帝が続き、チベット・東トルキスタンまで版図拡大</div>
+    </div>
+  </div>
+
+  <p class="sec">清の統治：ふたつの顔</p>
+  <div class="card">
+    <div class="two-col">
+      <div>
+        <div style="font-weight:500;font-size:13px;margin-bottom:6px;color:#185FA5;">😊 柔らかい面</div>
+        <div style="font-size:13px;line-height:1.7;">
+          ・科挙など漢人王朝の制度を継承<br>
+          ・皇帝は北方民族リーダー・中国皇帝・チベット仏教支援者を兼ねる<br>
+          ・貿易は明より自由放任的
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:500;font-size:13px;margin-bottom:6px;color:#A32D2D;">😠 厳しい面</div>
+        <div style="font-size:13px;line-height:1.7;">
+          ・漢人男性に<strong>辮髪（弁髪）</strong>を強制<br>
+          ・清に逆らう言論を弾圧<br>
+          ・1757年以降ヨーロッパ船の来航を<strong>広州</strong>1港に限定
+        </div>
+      </div>
+    </div>
+    <div class="note">18世紀：人口急増＋アメリカ伝来のトウモロコシ・サツマイモで山地開墾が進む → しかし環境破壊・自然災害 → 18世紀末に四川中心で白蓮教徒の乱がおこる</div>
+  </div>
+
+</div>
+
+<!-- ===== ② 江戸の外交 ===== -->
+<div id="page-edo" class="page">
+
+  <p class="sec">幕藩体制のしくみ</p>
+  <div class="card">
+    <div class="flow">
+      <span class="fb">江戸幕府（将軍）</span>
+      <span class="fa">←参勤交代など軍役→</span>
+      <span class="fb">各地の大名（藩）</span>
+    </div>
+    <div class="flow" style="margin-top:4px;">
+      <span class="fb">大名</span>
+      <span class="fa">→ 年貢徴収 ←</span>
+      <span class="fb">百姓（村ごと）</span>
+    </div>
+    <div class="note">1635年に参勤交代を義務化。大名は江戸と領国を1年交代で往復させられ、莫大な費用がかかった → 大名が力をつけにくい仕組み。</div>
+  </div>
+
+  <p class="sec">4つの窓口（4つの口）</p>
+  <div class="window-grid">
+    <div class="w-box w-nagasaki">
+      <div class="w-title">🚢 長崎の窓口</div>
+      オランダ・中国の商船のみ来航。出島にオランダ商館。長崎奉行が監視。
+    </div>
+    <div class="w-box w-tsushima">
+      <div class="w-title">📜 対馬の窓口</div>
+      対馬藩が朝鮮との通交・貿易を独占。将軍代替わりに通信使が来日。
+    </div>
+    <div class="w-box w-satsuma">
+      <div class="w-title">🌺 薩摩の窓口</div>
+      1609年に琉球王国を征服。中国への朝貢貿易も継続させて利益を得た。
+    </div>
+    <div class="w-box w-matsumae">
+      <div class="w-title">🐟 松前の窓口</div>
+      1604年から蝦夷地（北海道）の支配権。アイヌとの交易を家臣に知行として与えた。
+    </div>
+  </div>
+  <div class="note">これら4つの窓口以外は原則禁止。この体制を「鎖国」と呼ぶことがある。</div>
+
+  <p class="sec">江戸の貿易品の変化</p>
+  <table class="trade-table">
+    <tr><th>方向</th><th>品目</th><th>変化</th></tr>
+    <tr>
+      <td class="import-bg">輸入</td>
+      <td>中国産の生糸・絹織物、東南アジア産の砂糖、朝鮮の人参（薬種）</td>
+      <td>18世紀以降に国産化が進む</td>
+    </tr>
+    <tr>
+      <td class="export-bg">輸出</td>
+      <td>初めは<strong>銀</strong> → のちに<strong>銅</strong> → 鉱物不足で<strong>俵物（海産物）</strong>へ</td>
+      <td>鉱物資源の枯渇が背景</td>
+    </tr>
+  </table>
+
+  <p class="sec">江戸の経済と三都</p>
+  <div class="card">
+    <div class="three-col">
+      <div class="mini-card"><div class="mc-title">江戸</div><div class="mc-sub">政治の中心<br>幕府直轄</div></div>
+      <div class="mini-card"><div class="mc-title">京都</div><div class="mc-sub">文化の中心<br>西陣織・寺社</div></div>
+      <div class="mini-card"><div class="mc-title">大坂</div><div class="mc-sub">商業・金融の中心<br>蔵屋敷・舟運</div></div>
+    </div>
+    <div class="note">大名は大坂・江戸に蔵屋敷をおき、年貢米や特産物を売って幕府鋳造の貨幣を獲得。各地を結ぶ流通・金融・通信が発達した。</div>
+  </div>
+
+</div>
+
+<!-- ===== ③ 琉球・アイヌ ===== -->
+<div id="page-ryukyu" class="page">
+
+  <p class="sec">琉球王国の「二重外交」（図解）</p>
+  <div class="card">
+    <div class="ryukyu-center">
+      <div class="ry-box ry-china">中国（清）<br>朝貢・返礼品</div>
+      <span class="ry-arrow">⇄</span>
+      <div class="ry-box ry-main">琉球王国</div>
+      <span class="ry-arrow">⇄</span>
+      <div class="ry-box ry-japan">日本（薩摩藩）<br>1609年征服<br>謝恩使・慶賀使</div>
+    </div>
+    <div class="note">
+      琉球は中国と日本の<strong>両方に従う二重外交</strong>。清の暦を使い朝貢しながら、薩摩藩にも貢納。<br>
+      将軍代替わりには慶賀使、琉球国王代替わりには謝恩使を江戸に派遣。幕府は琉球使節を将軍権威の演出に利用した。<br>
+      主な産物：<strong>砂糖（日本向け）</strong>、中継貿易で東南アジアの物産を中国に輸出。
+    </div>
+  </div>
+
+  <p class="sec">アイヌの人々と昆布ロード</p>
+  <div class="card">
+    <div class="flow" style="font-size:12px;">
+      <span class="fb" style="font-size:12px;">山丹人（中国東北）<br>→毛皮・官服・絹</span>
+      <span class="fa">⇄</span>
+      <span class="fb" style="font-size:12px;background:#FAECE7;border-color:#D85A30;color:#712B13;">アイヌの人々<br>（蝦夷地）</span>
+      <span class="fa">⇄</span>
+      <span class="fb" style="font-size:12px;">和人商人<br>→米・酒・鉄器</span>
+    </div>
+    <div class="flow" style="font-size:12px;margin-top:6px;">
+      <span class="fb" style="font-size:12px;">昆布・鮭・にしん</span>
+      <span class="fa">→西廻り航路→</span>
+      <span class="fb" style="font-size:12px;">大坂→九州→琉球→中国</span>
+    </div>
+    <div class="note">
+      この昆布の流通ルートを「<strong>昆布ロード</strong>」という。<br>
+      1604年：松前藩がアイヌとの交易独占権を獲得。家臣に「商場知行」として交易権を与える。<br>
+      18世紀：和人商人の請負制が広がり、利潤優先でアイヌの自立性が失われていく。<br>
+      1669年：シャクシャインの戦い（アイヌの大規模抵抗）
+    </div>
+  </div>
+
+  <p class="sec">広州（清）と長崎（日本）の共通点</p>
+  <div class="card">
+    <div class="two-col">
+      <div>
+        <div class="compare-col" style="color:#185FA5;">清の広州</div>
+        <div style="font-size:13px;line-height:1.7;">1757年以降ヨーロッパ貿易を広州1港に限定。「公行（コホン）」という商人組合に貿易独占権を付与。</div>
+      </div>
+      <div>
+        <div class="compare-col" style="color:#3B6D11;">日本の長崎</div>
+        <div style="font-size:13px;line-height:1.7;">オランダ・中国のみ長崎に来航を許可。出島でオランダを管理。長崎奉行が監視。</div>
+      </div>
+    </div>
+    <div class="note">共通点：①特定の港1か所に外国貿易を限定 ②政府が貿易を厳しく管理・監視。どちらも18世紀の「貿易管理強化」の時代の産物。</div>
+  </div>
+
+</div>
+
+<!-- ===== クイズ ===== -->
+<div id="page-quiz" class="page">
+
+<div class="score-bar">
+  <span style="font-size:13px;color:#5F5E5A;">スコア：</span>
+  <span class="score-num" id="sc">0</span>
+  <span style="font-size:13px;color:#5F5E5A;">/ 10問</span>
+</div>
+
+<div class="qcard"><div class="qq">Q1. 朝貢関係で、中心国（明）が周辺国に与える返礼品の価値は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q1',false)">貢物と同じ価値のものを返す</button>
+  <button class="qbtn" onclick="ans(this,'q1',true)">貢物の数倍の価値がある返礼品を与えるのが一般的</button>
+  <button class="qbtn" onclick="ans(this,'q1',false)">返礼品は出さず権威を示すだけ</button>
+</div><div class="qres" id="res-q1"></div></div>
+
+<div class="qcard"><div class="qq">Q2. 東南アジア・インド洋に大艦隊を派遣したムスリムの宦官は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q2',false)">フランシスコ＝ザビエル</button>
+  <button class="qbtn" onclick="ans(this,'q2',true)">鄭和</button>
+  <button class="qbtn" onclick="ans(this,'q2',false)">バスコ＝ダ＝ガマ</button>
+</div><div class="qres" id="res-q2"></div></div>
+
+<div class="qcard"><div class="qq">Q3. 清が漢人男性に強制した満洲人の風習は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q3',false)">科挙の受験</button>
+  <button class="qbtn" onclick="ans(this,'q3',true)">辮髪（弁髪）</button>
+  <button class="qbtn" onclick="ans(this,'q3',false)">チベット仏教への改宗</button>
+</div><div class="qres" id="res-q3"></div></div>
+
+<div class="qcard"><div class="qq">Q4. 清がヨーロッパ船の来航を1757年以降に限定した港は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q4',false)">北京</button>
+  <button class="qbtn" onclick="ans(this,'q4',false)">上海</button>
+  <button class="qbtn" onclick="ans(this,'q4',true)">広州</button>
+</div><div class="qres" id="res-q4"></div></div>
+
+<div class="qcard"><div class="qq">Q5. 1635年、江戸幕府が諸大名に義務づけた制度は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q5',false)">寺請制度</button>
+  <button class="qbtn" onclick="ans(this,'q5',true)">参勤交代</button>
+  <button class="qbtn" onclick="ans(this,'q5',false)">朝貢制度</button>
+</div><div class="qres" id="res-q5"></div></div>
+
+<div class="qcard"><div class="qq">Q6. 江戸時代の輸出品の変化として正しい順は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q6',false)">銅 → 銀 → 俵物（海産物）</button>
+  <button class="qbtn" onclick="ans(this,'q6',true)">銀 → 銅 → 俵物（海産物）</button>
+  <button class="qbtn" onclick="ans(this,'q6',false)">俵物 → 銀 → 銅</button>
+</div><div class="qres" id="res-q6"></div></div>
+
+<div class="qcard"><div class="qq">Q7. 「4つの窓口」のうち、アイヌとの交易を担当したのは？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q7',false)">対馬藩</button>
+  <button class="qbtn" onclick="ans(this,'q7',false)">薩摩藩</button>
+  <button class="qbtn" onclick="ans(this,'q7',true)">松前藩</button>
+</div><div class="qres" id="res-q7"></div></div>
+
+<div class="qcard"><div class="qq">Q8. 琉球王国を1609年に征服した藩は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q8',false)">対馬藩（宗氏）</button>
+  <button class="qbtn" onclick="ans(this,'q8',true)">薩摩藩（島津氏）</button>
+  <button class="qbtn" onclick="ans(this,'q8',false)">松前藩</button>
+</div><div class="qres" id="res-q8"></div></div>
+
+<div class="qcard"><div class="qq">Q9. 「昆布ロード」のルートとして正しいのは？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q9',false)">昆布が長崎からオランダに輸出された</button>
+  <button class="qbtn" onclick="ans(this,'q9',true)">蝦夷地の昆布が西廻り航路で大坂→九州→琉球→中国に流通した</button>
+  <button class="qbtn" onclick="ans(this,'q9',false)">昆布は朝鮮への輸出品だった</button>
+</div><div class="qres" id="res-q9"></div></div>
+
+<div class="qcard"><div class="qq">Q10. 広州（清）と長崎（日本）の貿易管理の共通点は？</div>
+<div class="qopts">
+  <button class="qbtn" onclick="ans(this,'q10',false)">どちらも民間業者が自由に管理していた</button>
+  <button class="qbtn" onclick="ans(this,'q10',false)">どちらもキリスト教の布教と一体で行われた</button>
+  <button class="qbtn" onclick="ans(this,'q10',true)">特定の港1か所に貿易を限定し、政府が厳しく管理・監視した</button>
+</div><div class="qres" id="res-q10"></div></div>
+
+<div id="final" style="display:none;" class="final-box">
+  <div class="final-big" id="fscore">0/10</div>
+  <div style="font-size:15px;color:#5F5E5A;margin-top:6px;" id="fmsg"></div>
+  <button class="reset-btn" onclick="resetQ()">もう一度チャレンジ！</button>
+</div>
+
+</div><!-- end quiz -->
+</div><!-- end container -->
+
+<script>
+function sp(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('page-'+n).classList.add('active');
+  var map={summary:0,edo:1,ryukyu:2,quiz:3};
+  document.querySelectorAll('.tab')[map[n]].classList.add('active');
+  window.scrollTo(0,0);
+}
+var score=0,done={};
+function ans(btn,qid,ok){
+  if(done[qid])return;
+  done[qid]=true;
+  var btns=btn.closest('.qcard').querySelectorAll('.qbtn');
+  btns.forEach(function(b){b.disabled=true;});
+  var res=document.getElementById('res-'+qid);
+  res.style.display='block';
+  if(ok){
+    btn.classList.add('ok');score++;
+    document.getElementById('sc').textContent=score;
+    res.className='qres rok';res.textContent='✓ 正解！よくできました！';
+  }else{
+    btn.classList.add('ng');
+    res.className='qres rng';res.textContent='✗ 不正解… 解説タブを確認しよう！';
+    btns.forEach(function(b){
+      if(b.getAttribute('onclick')&&b.getAttribute('onclick').indexOf('true')>-1)b.classList.add('ok');
+    });
+  }
+  if(Object.keys(done).length===10){
+    var f=document.getElementById('final');f.style.display='block';
+    document.getElementById('fscore').textContent=score+'/10';
+    var msgs=['もう一度復習しよう！','惜しい！あと少し！','よくできました！','満点！完璧です！'];
+    document.getElementById('fmsg').textContent=msgs[score<=4?0:score<=6?1:score<=9?2:3];
+  }
+}
+function resetQ(){
+  score=0;done={};
+  document.getElementById('sc').textContent='0';
+  document.getElementById('final').style.display='none';
+  document.querySelectorAll('.qbtn').forEach(function(b){b.disabled=false;b.classList.remove('ok','ng');});
+  document.querySelectorAll('.qres').forEach(function(r){r.style.display='none';});
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
