@@ -3,388 +3,602 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>アジア諸地域の繁栄と日本 まとめ＆クイズ</title>
+<title>漫画でわかる！アジアの歴史</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;background:#f5f4f0;color:#1a1a18;line-height:1.7;font-size:16px;}
-.header{background:#185FA5;color:#fff;padding:1.2rem 1.5rem;text-align:center;}
-.header h1{font-size:18px;font-weight:500;margin-bottom:4px;}
-.header p{font-size:13px;opacity:.85;}
-.container{max-width:680px;margin:0 auto;padding:1rem;}
-.tabs{display:flex;gap:4px;border-bottom:1px solid #d3d1c7;margin-bottom:1.5rem;overflow-x:auto;}
-.tab{padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:none;color:#888780;border-bottom:2px solid transparent;margin-bottom:-1px;border-radius:0;white-space:nowrap;flex-shrink:0;}
-.tab.active{color:#185FA5;border-bottom-color:#185FA5;}
-.page{display:none;}.page.active{display:block;}
-.sec{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#888780;margin:1.75rem 0 .6rem;padding-bottom:4px;border-bottom:1px solid #d3d1c7;}
-.card{background:#fff;border:1px solid #d3d1c7;border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;}
-.tribute-wrap{display:flex;align-items:center;justify-content:center;margin:1rem 0;flex-wrap:wrap;gap:6px;}
-.t-box{text-align:center;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:500;min-width:90px;}
-.t-china{background:#B5D4F4;color:#0C447C;border:1.5px solid #378ADD;}
-.t-neighbor{background:#C0DD97;color:#27500A;border:1.5px solid #639922;}
-.t-arrow{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:#888780;}
-.t-arrow .ar{font-size:22px;color:#5F5E5A;}
-.window-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;}
-.w-box{border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.6;}
-.w-nagasaki{background:#E6F1FB;border:1px solid #378ADD;color:#0C447C;}
-.w-tsushima{background:#EAF3DE;border:1px solid #639922;color:#27500A;}
-.w-satsuma{background:#FAEEDA;border:1px solid #BA7517;color:#633806;}
-.w-matsumae{background:#FAECE7;border:1px solid #D85A30;color:#712B13;}
-.w-title{font-weight:500;margin-bottom:4px;}
-.tl{position:relative;padding-left:22px;margin:6px 0;}
-.tl::before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:#d3d1c7;}
-.tl-item{position:relative;margin-bottom:10px;font-size:13px;line-height:1.5;}
-.tl-item::before{content:'';position:absolute;left:-18px;top:5px;width:8px;height:8px;border-radius:50%;background:#378ADD;}
-.yr{display:inline-block;background:#185FA5;color:#fff;font-size:11px;font-weight:500;padding:1px 7px;border-radius:20px;margin-right:5px;}
-.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:6px 0;font-size:13px;}
-.fb{background:#f1efe8;border:1px solid #b4b2a9;border-radius:8px;padding:5px 10px;font-weight:500;}
-.fa{color:#888780;}
-.bubble{border:2px solid;border-radius:12px;padding:9px 13px;font-size:13px;line-height:1.6;margin:7px 0;}
-.bc{border-color:#D85A30;background:#FAECE7;color:#712B13;}
-.note{font-size:12px;color:#5F5E5A;line-height:1.7;margin-top:8px;padding-top:8px;border-top:1px solid #d3d1c7;}
-.trade-table{width:100%;font-size:13px;border-collapse:collapse;}
-.trade-table th{background:#f1efe8;font-weight:500;padding:6px 10px;text-align:left;border:1px solid #d3d1c7;}
-.trade-table td{padding:6px 10px;border:1px solid #d3d1c7;line-height:1.5;vertical-align:top;}
-.import-bg{background:#E6F1FB;color:#0C447C;}
-.export-bg{background:#FAECE7;color:#712B13;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
-.mini-card{text-align:center;padding:10px 6px;background:#f1efe8;border-radius:8px;}
-.mini-card .mc-title{font-weight:500;font-size:13px;}
-.mini-card .mc-sub{font-size:12px;color:#5F5E5A;margin-top:4px;}
-.qcard{background:#fff;border:1px solid #d3d1c7;border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;}
-.qq{font-size:14px;font-weight:500;margin-bottom:10px;}
-.qopts{display:flex;flex-direction:column;gap:7px;}
-.qbtn{background:#f1efe8;border:1px solid #b4b2a9;border-radius:8px;padding:9px 13px;font-size:13px;cursor:pointer;text-align:left;color:#1a1a18;transition:background .12s;}
-.qbtn:hover{background:#d3d1c7;}
-.qbtn.ok{background:#EAF3DE;border-color:#639922;color:#27500A;}
-.qbtn.ng{background:#FCEBEB;border-color:#A32D2D;color:#501313;}
-.qres{margin-top:8px;padding:7px 11px;border-radius:8px;font-size:13px;display:none;}
-.rok{background:#EAF3DE;color:#27500A;}
-.rng{background:#FCEBEB;color:#501313;}
-.score-bar{display:flex;align-items:center;gap:8px;margin-bottom:1rem;background:#fff;border:1px solid #d3d1c7;border-radius:8px;padding:10px 14px;}
-.score-num{font-size:20px;font-weight:500;color:#185FA5;}
-.final-box{background:#f1efe8;border-radius:12px;padding:1.25rem;text-align:center;margin-top:1rem;}
-.final-big{font-size:36px;font-weight:500;color:#185FA5;}
-.reset-btn{margin-top:1rem;padding:8px 20px;border-radius:8px;border:1px solid #b4b2a9;background:#fff;cursor:pointer;font-size:13px;}
-.kw{display:inline-block;background:#f1efe8;border:1px solid #b4b2a9;border-radius:8px;padding:3px 9px;font-size:12px;font-weight:500;margin:3px;}
-.ryukyu-center{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:8px 0;}
-.ry-box{text-align:center;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:500;}
-.ry-china{background:#B5D4F4;color:#0C447C;}
-.ry-main{background:#FAEEDA;border:2px solid #BA7517;color:#633806;padding:14px 18px;font-size:14px;}
-.ry-japan{background:#C0DD97;color:#27500A;}
-.ry-arrow{font-size:20px;color:#888780;}
-.compare-col{font-weight:500;font-size:13px;margin-bottom:6px;}
-strong{font-weight:600;}
+body{background:#f5f4f0;font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;}
+.manga{background:#fff;max-width:680px;margin:0 auto;padding:12px;}
+.chapter{background:#1a1a1a;color:#fff;font-size:15px;font-weight:500;padding:8px 16px;margin-bottom:8px;border-radius:4px;letter-spacing:.05em;}
+.grid{display:grid;gap:4px;margin-bottom:4px;}
+.panel{background:#fff;border:3px solid #1a1a1a;overflow:hidden;position:relative;padding:10px;}
+.panel-blue{background:#E6F1FB;}
+.panel-amber{background:#FAEEDA;}
+.panel-coral{background:#FAECE7;}
+.panel-teal{background:#E1F5EE;}
+.panel-yellow{background:#FFF9C4;}
+.caption{color:#fff;font-size:12px;padding:4px 10px;margin-bottom:8px;border-radius:2px;display:inline-block;}
+.cap-dark{background:#1a1a1a;}
+.cap-blue{background:#185FA5;}
+.cap-teal{background:#0F6E56;}
+.cap-amber{background:#854F0B;}
+.cap-coral{background:#993C1D;}
+.speech{border:2.5px solid #1a1a1a;border-radius:16px;padding:8px 12px;font-size:13px;line-height:1.6;margin:5px 0;background:#fff;position:relative;}
+.speech-tail{position:relative;}
+.speech-tail::after{content:'▼';position:absolute;bottom:-16px;left:16px;font-size:10px;color:#1a1a1a;line-height:1;}
+.think{border:2.5px dashed #1a1a1a;border-radius:16px;padding:8px 12px;font-size:12px;line-height:1.6;margin:5px 0;background:#fff;}
+.shout{border:3px solid #1a1a1a;padding:8px 12px;font-size:14px;font-weight:500;line-height:1.4;margin:5px 0;background:#FFF9C4;transform:skew(-1deg);}
+.char{display:flex;align-items:flex-start;gap:10px;margin:6px 0;}
+.char-r{flex-direction:row-reverse;}
+.avatar{min-width:52px;width:52px;height:52px;border:2.5px solid #1a1a1a;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;font-weight:500;text-align:center;line-height:1.2;flex-shrink:0;border-radius:4px;}
+.av-blue{background:#B5D4F4;color:#0C447C;}
+.av-teal{background:#9FE1CB;color:#085041;}
+.av-amber{background:#FAC775;color:#633806;}
+.av-coral{background:#F5C4B3;color:#712B13;}
+.av-dark{background:#1a1a1a;color:#fff;}
+.av-green{background:#C0DD97;color:#27500A;}
+.av-purple{background:#CECBF6;color:#3C3489;}
+.sfx{font-size:30px;font-weight:500;color:#1a1a1a;letter-spacing:-.02em;line-height:1;margin:4px 0;}
+.sfx-red{color:#A32D2D;}
+.sfx-blue{color:#185FA5;}
+.yr{display:inline-block;background:#1a1a1a;color:#fff;font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;margin:0 3px;}
+.yr-blue{background:#185FA5;}
+.yr-teal{background:#0F6E56;color:#E1F5EE;}
+.big{font-size:20px;font-weight:500;line-height:1.3;}
+.kw{display:inline-block;border:2px solid #1a1a1a;padding:2px 8px;font-size:12px;font-weight:500;margin:2px;background:#FFF9C4;}
+.kw-blue{border-color:#185FA5;background:#E6F1FB;color:#0C447C;}
+.kw-red{border-color:#A32D2D;background:#FCEBEB;color:#501313;}
+.kw-teal{border-color:#0F6E56;background:#E1F5EE;color:#085041;}
+.divider{height:8px;background:#1a1a1a;margin:8px 0;}
+.flow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:6px 0;}
+.fb{border:2px solid #1a1a1a;padding:3px 8px;font-size:12px;font-weight:500;background:#fff;}
+.fa{font-size:14px;color:#5F5E5A;}
+.qcard{border:3px solid #1a1a1a;padding:12px;margin-top:6px;background:#fff;}
+.qbtn{background:#fff;border:2px solid #1a1a1a;padding:8px 12px;font-size:13px;cursor:pointer;text-align:left;width:100%;margin-top:6px;font-family:inherit;border-radius:2px;}
+.qbtn:hover{background:#FFF9C4;}
+.qbtn.ok{background:#E1F5EE;border-color:#0F6E56;color:#085041;}
+.qbtn.ng{background:#FAECE7;border-color:#993C1D;color:#712B13;}
+.qres{font-size:13px;margin-top:6px;padding:6px 10px;border:2px solid;border-radius:2px;}
+.qres-ok{border-color:#0F6E56;background:#E1F5EE;color:#085041;}
+.qres-ng{border-color:#993C1D;background:#FAECE7;color:#712B13;}
+.score-line{font-size:14px;font-weight:500;margin-bottom:10px;padding:6px 10px;background:#f5f4f0;border-radius:4px;}
+ruby{ruby-align:center;}
+rt{font-size:0.55em;}
+.note{font-size:11px;color:#888;margin-top:4px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;}
+.window-label{font-weight:500;font-size:13px;margin-bottom:6px;}
+.sep{border-top:2px solid #1a1a1a;margin:8px 0;}
 @media(max-width:480px){
-  .window-grid{grid-template-columns:1fr;}
-  .two-col{grid-template-columns:1fr;}
-  .three-col{grid-template-columns:1fr 1fr;}
-  .tribute-wrap{flex-direction:column;align-items:center;}
-  .t-arrow .ar{transform:rotate(90deg);}
+  .two{grid-template-columns:1fr;}
+  .three{grid-template-columns:1fr 1fr;}
+  .sfx{font-size:22px;}
+  .big{font-size:16px;}
 }
 </style>
 </head>
 <body>
+<div class="manga">
 
-<div class="header">
-  <h1>アジア諸地域の繁栄と日本 まとめ＆クイズ</h1>
-  <p>タブを切り替えて使ってね！</p>
+<div style="text-align:center;padding:16px 0 8px;border-bottom:4px solid #1a1a1a;margin-bottom:12px;">
+  <div style="font-size:22px;font-weight:500;">漫画でわかる！</div>
+  <div style="font-size:16px;color:#5F5E5A;margin-top:4px;">アジア諸地域の繁栄と日本</div>
 </div>
 
-<div class="container">
+<!-- ===== 地図 ===== -->
+<div class="chapter">まず確認！登場する国・地域の場所</div>
+<div class="panel" style="padding:8px;">
+<svg width="100%" viewBox="0 0 656 420" style="display:block;" xmlns="http://www.w3.org/2000/svg">
 
-<div class="tabs">
-  <button class="tab active" onclick="sp('summary')">①明・清</button>
-  <button class="tab" onclick="sp('edo')">②江戸の外交</button>
-  <button class="tab" onclick="sp('ryukyu')">③琉球・アイヌ</button>
-  <button class="tab" onclick="sp('quiz')">クイズ</button>
+<!-- 海（背景） -->
+<rect x="0" y="0" width="656" height="420" fill="#BBDEFB" rx="4"/>
+
+<!-- ユーラシア大陸 大まか -->
+<polygon points="0,0 656,0 656,280 580,300 540,310 500,320 460,300 420,310 380,290 340,300 300,280 260,300 220,290 180,310 120,300 60,320 0,310" fill="#E8E0CC"/>
+
+<!-- 中国本土 -->
+<polygon points="240,80 310,70 370,85 400,100 410,130 390,160 370,175 340,180 310,185 280,175 255,160 240,140 230,110" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="315" y="132" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="14" font-weight="500" fill="#633806">中国</text>
+<text x="315" y="148" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#854F0B">（明→清）</text>
+
+<!-- 北京マーク -->
+<circle cx="330" cy="95" r="5" fill="#A32D2D"/>
+<text x="340" y="92" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="10" fill="#A32D2D" font-weight="500">北京</text>
+
+<!-- 広州マーク -->
+<circle cx="355" cy="168" r="4" fill="#185FA5"/>
+<text x="362" y="171" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="10" fill="#185FA5" font-weight="500">広州</text>
+
+<!-- 中国東北（満洲） -->
+<polygon points="350,55 400,45 440,55 450,75 430,90 400,100 370,85 350,70" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="1.5"/>
+<text x="400" y="72" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#444441">満洲</text>
+<text x="400" y="83" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="10" fill="#5F5E5A">（女真人）</text>
+
+<!-- モンゴル -->
+<polygon points="240,55 350,45 350,70 310,75 280,78 240,80 220,65" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="285" y="68" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#27500A">モンゴル</text>
+
+<!-- チベット -->
+<polygon points="210,120 240,110 260,130 255,160 230,165 205,150 195,135" fill="#CECBF6" stroke="#534AB7" stroke-width="1.5"/>
+<text x="227" y="142" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#3C3489">チベット</text>
+
+<!-- 朝鮮半島 -->
+<polygon points="420,90 445,85 455,100 450,125 435,135 420,128 415,110" fill="#9FE1CB" stroke="#0F6E56" stroke-width="2"/>
+<text x="436" y="113" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="12" font-weight="500" fill="#085041">朝鮮</text>
+
+<!-- 日本列島 -->
+<ellipse cx="510" cy="105" rx="18" ry="35" fill="#F5C4B3" stroke="#993C1D" stroke-width="2" transform="rotate(-20,510,105)"/>
+<text x="536" y="100" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="13" font-weight="500" fill="#712B13">日本</text>
+<text x="536" y="113" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="10" fill="#993C1D">（江戸幕府）</text>
+
+<!-- 蝦夷地 -->
+<ellipse cx="515" cy="62" rx="20" ry="13" fill="#F0997B" stroke="#993C1D" stroke-width="1.5"/>
+<text x="515" y="59" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="10" fill="#712B13">蝦夷地</text>
+<text x="515" y="70" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="9" fill="#993C1D">（アイヌ）</text>
+
+<!-- 対馬 -->
+<ellipse cx="466" cy="128" rx="6" ry="9" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.5"/>
+<text x="476" y="132" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="9" fill="#085041">対馬</text>
+
+<!-- 琉球 -->
+<ellipse cx="470" cy="185" rx="10" ry="14" fill="#FAC775" stroke="#BA7517" stroke-width="2"/>
+<text x="484" y="185" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="12" font-weight="500" fill="#633806">琉球</text>
+<text x="484" y="196" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="9" fill="#854F0B">王国</text>
+
+<!-- 長崎 -->
+<circle cx="488" cy="138" r="4" fill="#185FA5"/>
+<text x="494" y="136" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="9" fill="#185FA5" font-weight="500">長崎</text>
+<text x="494" y="146" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="8" fill="#185FA5">（出島）</text>
+
+<!-- 東南アジア -->
+<polygon points="280,185 340,180 370,195 365,230 340,250 300,255 270,240 260,215 265,195" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="315" y="222" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="12" font-weight="500" fill="#27500A">東南アジア</text>
+
+<!-- インド -->
+<polygon points="170,140 210,130 220,155 215,185 195,210 170,215 150,195 148,170 155,150" fill="#E8E0CC" stroke="#888780" stroke-width="1.5"/>
+<text x="183" y="180" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#5F5E5A">インド</text>
+
+<!-- ポルトガル（ヨーロッパ） -->
+<circle cx="30" cy="100" r="18" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+<text x="30" y="97" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="10" font-weight="500" fill="#3C3489">ヨーロッパ</text>
+<text x="30" y="109" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="9" fill="#534AB7">（ポルトガル）</text>
+
+<!-- 鄭和ルート -->
+<path d="M310,165 Q295,200 280,210 Q250,230 200,240 Q160,250 120,270 Q80,290 50,310" fill="none" stroke="#0F6E56" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr2)"/>
+<text x="175" y="255" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="10" fill="#0F6E56" transform="rotate(-18,175,255)">鄭和の遠征ルート</text>
+
+<!-- 昆布ロード -->
+<path d="M515,75 Q500,180 472,188 Q440,200 400,230 Q370,248 355,248" fill="none" stroke="#854F0B" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr3)"/>
+<text x="490" y="165" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="9" fill="#854F0B" transform="rotate(80,490,165)">昆布ロード</text>
+
+<!-- ポルトガル→日本・中国ルート -->
+<path d="M48,105 Q150,130 240,145 Q280,175 310,168" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr4)"/>
+<text x="145" y="128" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="9" fill="#534AB7">ポルトガル人の進出</text>
+
+<defs>
+  <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- 凡例 -->
+<rect x="0" y="320" width="656" height="100" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+<text x="12" y="338" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" font-weight="500" fill="#1a1a1a">凡例</text>
+
+<rect x="12" y="345" width="14" height="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+<text x="30" y="354" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">中国（明→清）</text>
+
+<rect x="12" y="360" width="14" height="10" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.5"/>
+<text x="30" y="369" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">朝鮮</text>
+
+<rect x="12" y="375" width="14" height="10" fill="#F5C4B3" stroke="#993C1D" stroke-width="1.5"/>
+<text x="30" y="384" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">日本（江戸幕府）</text>
+
+<rect x="12" y="390" width="14" height="10" fill="#FAC775" stroke="#BA7517" stroke-width="1.5"/>
+<text x="30" y="399" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">琉球王国</text>
+
+<rect x="130" y="345" width="14" height="10" fill="#F0997B" stroke="#993C1D" stroke-width="1.5"/>
+<text x="148" y="354" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">蝦夷地（アイヌ）</text>
+
+<rect x="130" y="360" width="14" height="10" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="148" y="369" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">東南アジア</text>
+
+<rect x="130" y="375" width="14" height="10" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="1.5"/>
+<text x="148" y="384" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">満洲（女真人）</text>
+
+<rect x="130" y="390" width="14" height="10" fill="#CECBF6" stroke="#534AB7" stroke-width="1.5"/>
+<text x="148" y="399" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">チベット</text>
+
+<line x1="280" y1="345" x2="294" y2="345" stroke="#0F6E56" stroke-width="2" stroke-dasharray="4,2"/>
+<text x="298" y="349" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">鄭和の遠征ルート</text>
+
+<line x1="280" y1="362" x2="294" y2="362" stroke="#854F0B" stroke-width="2" stroke-dasharray="4,2"/>
+<text x="298" y="366" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">昆布ロード</text>
+
+<line x1="280" y1="379" x2="294" y2="379" stroke="#534AB7" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="298" y="383" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">ポルトガル人の進出</text>
+
+<circle cx="286" cy="396" r="4" fill="#185FA5"/>
+<text x="298" y="400" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif" font-size="11" fill="#1a1a1a">主要港（北京・広州・長崎）</text>
+
+</svg>
 </div>
+<div class="divider"></div>
 
-<!-- ===== ① 明・清 ===== -->
-<div id="page-summary" class="page active">
+<!-- ===== 第1話 ===== -->
+<div class="chapter">第1話：明の「超太っ腹」外交</div>
 
-  <p class="sec">朝貢体制のしくみ（図解）</p>
-  <div class="card">
-    <div class="tribute-wrap">
-      <div class="t-box t-neighbor">周辺国<br><small>（朝鮮・琉球など）</small></div>
-      <div class="t-arrow"><span>貢物を持参</span><span class="ar">→</span></div>
-      <div class="t-box t-china">明（中国）<br>皇帝</div>
-      <div class="t-arrow"><span>数倍の返礼品</span><span class="ar">→</span></div>
-      <div class="t-box t-neighbor">周辺国<br>経済が活性化</div>
-    </div>
-    <div class="note">
-      明から与えられる銅銭・生糸・絹織物が周辺国の経済を潤した。ただし民間の自由な貿易は制限された。<br>
-      ムスリムの宦官・<strong>鄭和</strong>が大艦隊で東南アジア・インド洋に派遣され、諸国に朝貢をうながした（1405〜1433）。
-    </div>
-  </div>
+<div class="grid" style="grid-template-columns:1fr 1fr;">
 
-  <p class="sec">倭寇と朝貢体制の動揺</p>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:10px;">
-      <span style="font-size:28px;">🏴‍☠️</span>
+  <div class="panel panel-blue">
+    <span class="caption cap-blue">14世紀半ば・中国</span>
+    <div class="char">
+      <div class="avatar av-blue">
+        <span style="font-size:18px;">👑</span>
+        <span>明の皇帝</span>
+      </div>
       <div>
-        <div class="bubble bc">「大航海時代」で商業が活発化 → 明の貿易制限に不満な<strong>中国人＋日本人まじりの商人集団</strong>が密貿易・略奪 → 中国側は「<strong>倭寇</strong>」と呼んだ</div>
-        <div class="note">なぜ取り締まれなかった？ → 日本が戦国時代で国内バラバラ。統一した命令が出せなかった。<br>最終的に<strong>ポルトガル人</strong>が日中間貿易の担い手になった。</div>
+        <div class="speech speech-tail"><ruby>朝貢<rt>ちょうこう</rt></ruby>せよ！貢物を持ってくれば…</div>
+      </div>
+    </div>
+    <div class="char char-r" style="margin-top:10px;">
+      <div class="avatar av-teal">
+        <span style="font-size:18px;">🏯</span>
+        <span>周辺国</span>
+      </div>
+      <div>
+        <div class="speech" style="text-align:right;">え、何をくれるの？</div>
       </div>
     </div>
   </div>
 
-  <p class="sec">明→清への交代（年表）</p>
-  <div class="card">
-    <div class="tl">
-      <div class="tl-item"><span class="yr">16C初</span>中国東北地方で<strong>女真（満洲）人</strong>の政権が成長</div>
-      <div class="tl-item"><span class="yr">17C初</span><strong>後金</strong>を建国 → のちに<strong>清</strong>と改称。朝鮮を服属させる</div>
-      <div class="tl-item"><span class="yr">1644</span>明が農民反乱で滅亡。清が北京を首都に大帝国を建設</div>
-      <div class="tl-item"><span class="yr">18C</span>康煕帝など有能な皇帝が続き、チベット・東トルキスタンまで版図拡大</div>
-    </div>
-  </div>
-
-  <p class="sec">清の統治：ふたつの顔</p>
-  <div class="card">
-    <div class="two-col">
-      <div>
-        <div style="font-weight:500;font-size:13px;margin-bottom:6px;color:#185FA5;">😊 柔らかい面</div>
-        <div style="font-size:13px;line-height:1.7;">
-          ・科挙など漢人王朝の制度を継承<br>
-          ・皇帝は北方民族リーダー・中国皇帝・チベット仏教支援者を兼ねる<br>
-          ・貿易は明より自由放任的
-        </div>
-      </div>
-      <div>
-        <div style="font-weight:500;font-size:13px;margin-bottom:6px;color:#A32D2D;">😠 厳しい面</div>
-        <div style="font-size:13px;line-height:1.7;">
-          ・漢人男性に<strong>辮髪（弁髪）</strong>を強制<br>
-          ・清に逆らう言論を弾圧<br>
-          ・1757年以降ヨーロッパ船の来航を<strong>広州</strong>1港に限定
-        </div>
-      </div>
-    </div>
-    <div class="note">18世紀：人口急増＋アメリカ伝来のトウモロコシ・サツマイモで山地開墾が進む → しかし環境破壊・自然災害 → 18世紀末に四川中心で白蓮教徒の乱がおこる</div>
+  <div class="panel panel-yellow" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+    <div class="sfx sfx-red">ドドーン！</div>
+    <div style="font-size:13px;font-weight:500;margin:8px 0;color:#1a1a1a;">貢物の<br><span style="font-size:18px;font-weight:500;">数倍</span>の返礼品！！</div>
+    <div style="font-size:12px;color:#5F5E5A;"><ruby>銅銭<rt>どうせん</rt></ruby>・<ruby>生糸<rt>きいと</rt></ruby>・<ruby>絹織物<rt>きぬおりもの</rt></ruby></div>
+    <div style="margin-top:10px;font-size:12px;color:#5F5E5A;border-top:2px solid #1a1a1a;padding-top:8px;">→ 周辺国の経済が大いに潤う</div>
   </div>
 
 </div>
 
-<!-- ===== ② 江戸の外交 ===== -->
-<div id="page-edo" class="page">
-
-  <p class="sec">幕藩体制のしくみ</p>
-  <div class="card">
-    <div class="flow">
-      <span class="fb">江戸幕府（将軍）</span>
-      <span class="fa">←参勤交代など軍役→</span>
-      <span class="fb">各地の大名（藩）</span>
+<div class="panel" style="margin-top:4px;">
+  <div class="char">
+    <div class="avatar av-teal">
+      <span style="font-size:18px;">🏯</span>
+      <span>周辺国</span>
     </div>
-    <div class="flow" style="margin-top:4px;">
-      <span class="fb">大名</span>
-      <span class="fa">→ 年貢徴収 ←</span>
-      <span class="fb">百姓（村ごと）</span>
-    </div>
-    <div class="note">1635年に参勤交代を義務化。大名は江戸と領国を1年交代で往復させられ、莫大な費用がかかった → 大名が力をつけにくい仕組み。</div>
-  </div>
-
-  <p class="sec">4つの窓口（4つの口）</p>
-  <div class="window-grid">
-    <div class="w-box w-nagasaki">
-      <div class="w-title">🚢 長崎の窓口</div>
-      オランダ・中国の商船のみ来航。出島にオランダ商館。長崎奉行が監視。
-    </div>
-    <div class="w-box w-tsushima">
-      <div class="w-title">📜 対馬の窓口</div>
-      対馬藩が朝鮮との通交・貿易を独占。将軍代替わりに通信使が来日。
-    </div>
-    <div class="w-box w-satsuma">
-      <div class="w-title">🌺 薩摩の窓口</div>
-      1609年に琉球王国を征服。中国への朝貢貿易も継続させて利益を得た。
-    </div>
-    <div class="w-box w-matsumae">
-      <div class="w-title">🐟 松前の窓口</div>
-      1604年から蝦夷地（北海道）の支配権。アイヌとの交易を家臣に知行として与えた。
+    <div>
+      <div class="shout">なんと太っ腹！！朝貢します！！</div>
+      <div class="note">朝鮮・<ruby>琉球<rt>りゅうきゅう</rt></ruby>・<ruby>室町幕府<rt>むろまちばくふ</rt></ruby>なども朝貢</div>
     </div>
   </div>
-  <div class="note">これら4つの窓口以外は原則禁止。この体制を「鎖国」と呼ぶことがある。</div>
+</div>
 
-  <p class="sec">江戸の貿易品の変化</p>
-  <table class="trade-table">
-    <tr><th>方向</th><th>品目</th><th>変化</th></tr>
-    <tr>
-      <td class="import-bg">輸入</td>
-      <td>中国産の生糸・絹織物、東南アジア産の砂糖、朝鮮の人参（薬種）</td>
-      <td>18世紀以降に国産化が進む</td>
-    </tr>
-    <tr>
-      <td class="export-bg">輸出</td>
-      <td>初めは<strong>銀</strong> → のちに<strong>銅</strong> → 鉱物不足で<strong>俵物（海産物）</strong>へ</td>
-      <td>鉱物資源の枯渇が背景</td>
-    </tr>
-  </table>
-
-  <p class="sec">江戸の経済と三都</p>
-  <div class="card">
-    <div class="three-col">
-      <div class="mini-card"><div class="mc-title">江戸</div><div class="mc-sub">政治の中心<br>幕府直轄</div></div>
-      <div class="mini-card"><div class="mc-title">京都</div><div class="mc-sub">文化の中心<br>西陣織・寺社</div></div>
-      <div class="mini-card"><div class="mc-title">大坂</div><div class="mc-sub">商業・金融の中心<br>蔵屋敷・舟運</div></div>
+<div class="panel panel-teal" style="margin-top:4px;">
+  <span class="caption cap-teal"><ruby>鄭和<rt>ていわ</rt></ruby>の大遠征 1405〜1433</span>
+  <div class="char">
+    <div class="avatar av-dark">
+      <span style="font-size:18px;">⚓</span>
+      <span style="color:#fff;"><ruby>鄭和<rt>ていわ</rt></ruby></span>
     </div>
-    <div class="note">大名は大坂・江戸に蔵屋敷をおき、年貢米や特産物を売って幕府鋳造の貨幣を獲得。各地を結ぶ流通・金融・通信が発達した。</div>
+    <div>
+      <div class="speech">ムスリムの<ruby>宦官<rt>かんがん</rt></ruby>・<ruby>鄭和<rt>ていわ</rt></ruby>だ！大<ruby>艦隊<rt>かんたい</rt></ruby>で東南アジア・インド洋へ出発！各国に<ruby>朝貢<rt>ちょうこう</rt></ruby>をうながすぞ！</div>
+    </div>
+  </div>
+  <div class="flow" style="margin-top:6px;">
+    <span class="fb">中国</span><span class="fa">→</span>
+    <span class="fb">東南アジア</span><span class="fa">→</span>
+    <span class="fb">インド洋</span><span class="fa">→</span>
+    <span class="fb">アフリカ沿岸</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== 第2話 ===== -->
+<div class="chapter">第2話：<ruby>倭寇<rt>わこう</rt></ruby>、現る！</div>
+
+<div class="grid" style="grid-template-columns:2fr 1fr;">
+
+  <div class="panel panel-coral">
+    <span class="caption cap-coral">16世紀・中国東南部の海</span>
+    <div class="char">
+      <div class="avatar av-coral">
+        <span style="font-size:18px;">🏴‍☠️</span>
+        <span><ruby>倭寇<rt>わこう</rt></ruby></span>
+      </div>
+      <div>
+        <div class="shout">明の貿易制限なんて知るか！密貿易＆略奪じゃ！！</div>
+        <div class="note">中国人＋日本人まじりの商人集団</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+    <div style="font-size:12px;color:#5F5E5A;margin-bottom:6px;">なぜ<br>取り締まれない？</div>
+    <div class="think" style="font-size:12px;">日本が<ruby>戦国<rt>せんごく</rt></ruby>時代でバラバラ…</div>
+    <div class="note" style="text-align:center;">誰が命令するの？状態</div>
   </div>
 
 </div>
 
-<!-- ===== ③ 琉球・アイヌ ===== -->
-<div id="page-ryukyu" class="page">
-
-  <p class="sec">琉球王国の「二重外交」（図解）</p>
-  <div class="card">
-    <div class="ryukyu-center">
-      <div class="ry-box ry-china">中国（清）<br>朝貢・返礼品</div>
-      <span class="ry-arrow">⇄</span>
-      <div class="ry-box ry-main">琉球王国</div>
-      <span class="ry-arrow">⇄</span>
-      <div class="ry-box ry-japan">日本（薩摩藩）<br>1609年征服<br>謝恩使・慶賀使</div>
+<div class="panel panel-amber" style="margin-top:4px;">
+  <span class="caption cap-amber">そこに登場！</span>
+  <div class="char">
+    <div class="avatar av-amber">
+      <span style="font-size:18px;">⛵</span>
+      <span>ポルトガル</span>
     </div>
-    <div class="note">
-      琉球は中国と日本の<strong>両方に従う二重外交</strong>。清の暦を使い朝貢しながら、薩摩藩にも貢納。<br>
-      将軍代替わりには慶賀使、琉球国王代替わりには謝恩使を江戸に派遣。幕府は琉球使節を将軍権威の演出に利用した。<br>
-      主な産物：<strong>砂糖（日本向け）</strong>、中継貿易で東南アジアの物産を中国に輸出。
+    <div>
+      <div class="speech">ポルトガル人です。日本と中国、両方に拠点を持ってます。貿易の仲介、お任せを！</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#633806;margin-top:4px;">→ 日中間貿易の担い手になり大きな利益を得た</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== 第3話 ===== -->
+<div class="chapter">第3話：清、天下を取る！</div>
+
+<div class="three">
+
+  <div class="panel panel-teal" style="text-align:center;">
+    <div style="font-size:11px;color:#085041;font-weight:500;margin-bottom:4px;">17世紀初め</div>
+    <div class="sfx sfx-blue" style="font-size:16px;">ガキーン！</div>
+    <div class="char" style="justify-content:center;margin-top:6px;">
+      <div class="avatar av-dark" style="width:40px;height:40px;min-width:40px;font-size:9px;">
+        <span style="font-size:14px;">🗡️</span>
+        <span style="color:#fff;"><ruby>女真<rt>じょしん</rt></ruby>人</span>
+      </div>
+    </div>
+    <div style="font-size:12px;font-weight:500;margin-top:4px;"><ruby>後金<rt>こうきん</rt></ruby>建国！<br>→のちに「清」</div>
+    <div class="note">朝鮮を服属</div>
+  </div>
+
+  <div class="panel" style="text-align:center;">
+    <span class="yr yr-blue" style="display:inline-block;margin-bottom:6px;">1644年</span>
+    <div class="sfx" style="font-size:16px;">ズドーン！</div>
+    <div style="font-size:13px;margin-top:6px;font-weight:500;">明が<ruby>農民反乱<rt>のうみんはんらん</rt></ruby>で滅亡</div>
+    <div class="char" style="justify-content:center;margin-top:6px;">
+      <div class="avatar av-coral" style="width:40px;height:40px;min-width:40px;font-size:9px;">
+        <span style="font-size:14px;">😱</span>
+        <span>明の皇帝</span>
+      </div>
     </div>
   </div>
 
-  <p class="sec">アイヌの人々と昆布ロード</p>
-  <div class="card">
-    <div class="flow" style="font-size:12px;">
-      <span class="fb" style="font-size:12px;">山丹人（中国東北）<br>→毛皮・官服・絹</span>
-      <span class="fa">⇄</span>
-      <span class="fb" style="font-size:12px;background:#FAECE7;border-color:#D85A30;color:#712B13;">アイヌの人々<br>（蝦夷地）</span>
-      <span class="fa">⇄</span>
-      <span class="fb" style="font-size:12px;">和人商人<br>→米・酒・鉄器</span>
-    </div>
-    <div class="flow" style="font-size:12px;margin-top:6px;">
-      <span class="fb" style="font-size:12px;">昆布・鮭・にしん</span>
-      <span class="fa">→西廻り航路→</span>
-      <span class="fb" style="font-size:12px;">大坂→九州→琉球→中国</span>
-    </div>
-    <div class="note">
-      この昆布の流通ルートを「<strong>昆布ロード</strong>」という。<br>
-      1604年：松前藩がアイヌとの交易独占権を獲得。家臣に「商場知行」として交易権を与える。<br>
-      18世紀：和人商人の請負制が広がり、利潤優先でアイヌの自立性が失われていく。<br>
-      1669年：シャクシャインの戦い（アイヌの大規模抵抗）
-    </div>
-  </div>
-
-  <p class="sec">広州（清）と長崎（日本）の共通点</p>
-  <div class="card">
-    <div class="two-col">
-      <div>
-        <div class="compare-col" style="color:#185FA5;">清の広州</div>
-        <div style="font-size:13px;line-height:1.7;">1757年以降ヨーロッパ貿易を広州1港に限定。「公行（コホン）」という商人組合に貿易独占権を付与。</div>
-      </div>
-      <div>
-        <div class="compare-col" style="color:#3B6D11;">日本の長崎</div>
-        <div style="font-size:13px;line-height:1.7;">オランダ・中国のみ長崎に来航を許可。出島でオランダを管理。長崎奉行が監視。</div>
+  <div class="panel panel-blue" style="text-align:center;">
+    <div style="font-size:11px;color:#5F5E5A;margin-bottom:4px;">北京入城！</div>
+    <div class="big" style="color:#0C447C;">大帝国<br>誕生！</div>
+    <div class="char" style="justify-content:center;margin-top:8px;">
+      <div class="avatar av-blue" style="width:40px;height:40px;min-width:40px;font-size:9px;">
+        <span style="font-size:14px;">🐉</span>
+        <span>清の皇帝</span>
       </div>
     </div>
-    <div class="note">共通点：①特定の港1か所に外国貿易を限定 ②政府が貿易を厳しく管理・監視。どちらも18世紀の「貿易管理強化」の時代の産物。</div>
+    <div class="note"><ruby>康熙帝<rt>こうきてい</rt></ruby>ら有能な皇帝が続く</div>
   </div>
 
 </div>
+
+<div class="panel" style="margin-top:4px;">
+  <span class="caption cap-dark">清の皇帝はマルチすぎる</span>
+  <div class="char">
+    <div class="avatar av-blue" style="width:52px;height:60px;">
+      <span style="font-size:20px;">🐉</span>
+      <span style="color:#0C447C;font-size:9px;">清の皇帝</span>
+    </div>
+    <div>
+      <div class="speech">朕は…<span class="kw">北方民族のリーダー</span><span class="kw kw-blue">中国皇帝</span><span class="kw kw-teal">チベット仏教の支援者</span>…全部兼ねてます。大帝国をひとつにまとめるためね。</div>
+    </div>
+  </div>
+  <div class="sep"></div>
+  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
+    <span class="kw kw-blue"><ruby>科挙<rt>かきょ</rt></ruby>を継承（良い面）</span>
+    <span class="kw kw-red"><ruby>辮髪<rt>べんぱつ</rt></ruby>を漢人男性に強制（厳しい面）</span>
+    <span class="kw kw-red">言論弾圧（厳しい面）</span>
+    <span class="kw"><ruby>広州<rt>こうしゅう</rt></ruby>1港に限定（1757年〜）</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== 第4話 ===== -->
+<div class="chapter">第4話：江戸幕府の「4つの窓口」作戦</div>
+
+<div class="panel panel-yellow">
+  <span class="caption cap-dark">1603年・江戸</span>
+  <div class="char">
+    <div class="avatar av-dark">
+      <span style="font-size:18px;">🏯</span>
+      <span style="color:#fff;font-size:9px;"><ruby>徳川家康<rt>とくがわいえやす</rt></ruby></span>
+    </div>
+    <div>
+      <div class="shout">外国との窓口は4つだけ！それ以外は全部禁止じゃ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="two" style="margin-top:4px;">
+
+  <div class="panel panel-blue">
+    <div class="char">
+      <div class="avatar av-blue">
+        <span style="font-size:18px;">🚢</span>
+        <span>オランダ</span>
+      </div>
+      <div>
+        <div class="window-label" style="color:#0C447C;">長崎の窓口</div>
+        <div style="font-size:12px;color:#0C447C;line-height:1.7;">オランダ・中国のみ来航<br><ruby>出島<rt>でじま</rt></ruby>でオランダを管理<br><ruby>長崎奉行<rt>ながさきぶぎょう</rt></ruby>が監視</div>
+      </div>
+    </div>
+    <div class="speech" style="font-size:11px;margin-top:6px;">「布教はしません！貿易だけです！」（オランダ）</div>
+  </div>
+
+  <div class="panel panel-teal">
+    <div class="char">
+      <div class="avatar av-teal">
+        <span style="font-size:18px;">📜</span>
+        <span>朝鮮使節</span>
+      </div>
+      <div>
+        <div class="window-label" style="color:#085041;">対馬の窓口</div>
+        <div style="font-size:12px;color:#085041;line-height:1.7;"><ruby>対馬藩<rt>つしまはん</rt></ruby>が独占<br><ruby>通信使<rt>つうしんし</rt></ruby>が来日<br>将軍代替わりに</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-amber">
+    <div class="char">
+      <div class="avatar av-amber">
+        <span style="font-size:18px;">🌺</span>
+        <span>琉球王国</span>
+      </div>
+      <div>
+        <div class="window-label" style="color:#633806;">薩摩の窓口</div>
+        <div style="font-size:12px;color:#633806;line-height:1.7;"><ruby>薩摩藩<rt>さつまはん</rt></ruby>が1609年に征服<br>中国への<ruby>朝貢<rt>ちょうこう</rt></ruby>も継続<br>→ 二重外交の琉球</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-coral">
+    <div class="char">
+      <div class="avatar av-coral">
+        <span style="font-size:18px;">🐟</span>
+        <span>アイヌ</span>
+      </div>
+      <div>
+        <div class="window-label" style="color:#712B13;">松前の窓口</div>
+        <div style="font-size:12px;color:#712B13;line-height:1.7;"><ruby>松前藩<rt>まつまえはん</rt></ruby>が1604年から<br>アイヌとの交易を独占<br>→ 昆布ロードの起点</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="panel" style="margin-top:4px;">
+  <span class="caption cap-dark"><ruby>参勤交代<rt>さんきんこうたい</rt></ruby>で大名を縛る（1635年）</span>
+  <div class="char">
+    <div class="avatar av-dark">
+      <span style="font-size:18px;">😤</span>
+      <span style="color:#fff;font-size:9px;">3代将軍<br><ruby>家光<rt>いえみつ</rt></ruby></span>
+    </div>
+    <div>
+      <div class="speech"><ruby>江戸<rt>えど</rt></ruby>と<ruby>領国<rt>りょうごく</rt></ruby>を1年交代で往復せよ！費用は全部自腹じゃ！</div>
+    </div>
+  </div>
+  <div class="think" style="font-size:12px;margin-top:6px;">（大名の本音：お金もなくなるし反乱なんて起こせない…）</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== 第5話 ===== -->
+<div class="chapter">第5話：昆布ロードと琉球の二重生活</div>
+
+<div class="panel">
+  <span class="caption cap-teal">アイヌの人々 → <ruby>蝦夷地<rt>えぞち</rt></ruby>（北海道）</span>
+  <div class="char">
+    <div class="avatar av-coral">
+      <span style="font-size:20px;">🐻</span>
+      <span>アイヌ</span>
+    </div>
+    <div>
+      <div class="speech">昆布・鮭・にしん…海の恵みを南へ送るぞ！</div>
+    </div>
+  </div>
+  <div class="flow" style="margin-top:6px;">
+    <span class="fb">蝦夷地</span><span class="fa">→</span>
+    <span class="fb"><ruby>西廻り<rt>にしまわり</rt></ruby>航路</span><span class="fa">→</span>
+    <span class="fb"><ruby>大坂<rt>おおさか</rt></ruby></span><span class="fa">→</span>
+    <span class="fb">九州</span><span class="fa">→</span>
+    <span class="fb"><ruby>琉球<rt>りゅうきゅう</rt></ruby></span><span class="fa">→</span>
+    <span class="fb">中国</span>
+  </div>
+  <div style="font-size:12px;color:#5F5E5A;margin-top:4px;">これが「<strong>昆布ロード</strong>」！</div>
+</div>
+
+<div class="panel panel-amber" style="margin-top:4px;">
+  <div class="char">
+    <div class="avatar av-amber">
+      <span style="font-size:20px;">🌺</span>
+      <span><ruby>琉球<rt>りゅうきゅう</rt></ruby>王国</span>
+    </div>
+    <div>
+      <div class="speech"><ruby>清<rt>しん</rt></ruby>への<ruby>朝貢<rt>ちょうこう</rt></ruby>は続けながら、<ruby>薩摩藩<rt>さつまはん</rt></ruby>にも従ってます。将軍が変わるたびに江戸へも使節を送ります…</div>
+    </div>
+  </div>
+  <div class="think" style="font-size:12px;margin-top:6px;">（内心：正直しんどい。でもこれが生き残り術…）</div>
+  <div class="sep"></div>
+  <div style="font-size:12px;color:#633806;">主な産物：<span class="kw" style="background:#FAEEDA;border-color:#BA7517;color:#633806;"><ruby>砂糖<rt>さとう</rt></ruby>（日本向け）</span><span class="kw" style="background:#FAEEDA;border-color:#BA7517;color:#633806;">中継貿易で東南アジアの物産→中国へ</span></div>
+</div>
+
+<div class="divider"></div>
 
 <!-- ===== クイズ ===== -->
-<div id="page-quiz" class="page">
+<div class="chapter">最終問題：漫画クイズ！全5問</div>
 
-<div class="score-bar">
-  <span style="font-size:13px;color:#5F5E5A;">スコア：</span>
-  <span class="score-num" id="sc">0</span>
-  <span style="font-size:13px;color:#5F5E5A;">/ 10問</span>
+<div class="score-line">スコア：<span id="sc">0</span> / 5問</div>
+
+<div class="qcard">
+  <div style="font-size:14px;font-weight:500;">Q1. <ruby>朝貢関係<rt>ちょうこうかんけい</rt></ruby>で正しいのは？</div>
+  <button class="qbtn" onclick="ans(this,'q1',false)">貢物と同じ価値の返礼品をもらえる</button>
+  <button class="qbtn" onclick="ans(this,'q1',true)">貢物の数倍の価値の返礼品をもらえる</button>
+  <button class="qbtn" onclick="ans(this,'q1',false)">返礼品はなく権威を示すだけ</button>
+  <div class="qres" id="res-q1" style="display:none;"></div>
 </div>
 
-<div class="qcard"><div class="qq">Q1. 朝貢関係で、中心国（明）が周辺国に与える返礼品の価値は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q1',false)">貢物と同じ価値のものを返す</button>
-  <button class="qbtn" onclick="ans(this,'q1',true)">貢物の数倍の価値がある返礼品を与えるのが一般的</button>
-  <button class="qbtn" onclick="ans(this,'q1',false)">返礼品は出さず権威を示すだけ</button>
-</div><div class="qres" id="res-q1"></div></div>
+<div class="qcard">
+  <div style="font-size:14px;font-weight:500;">Q2. 東南アジアに大<ruby>艦隊<rt>かんたい</rt></ruby>を派遣した<ruby>宦官<rt>かんがん</rt></ruby>は？</div>
+  <button class="qbtn" onclick="ans(this,'q2',false)">ザビエル</button>
+  <button class="qbtn" onclick="ans(this,'q2',true)"><ruby>鄭和<rt>ていわ</rt></ruby></button>
+  <button class="qbtn" onclick="ans(this,'q2',false)"><ruby>康熙帝<rt>こうきてい</rt></ruby></button>
+  <div class="qres" id="res-q2" style="display:none;"></div>
+</div>
 
-<div class="qcard"><div class="qq">Q2. 東南アジア・インド洋に大艦隊を派遣したムスリムの宦官は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q2',false)">フランシスコ＝ザビエル</button>
-  <button class="qbtn" onclick="ans(this,'q2',true)">鄭和</button>
-  <button class="qbtn" onclick="ans(this,'q2',false)">バスコ＝ダ＝ガマ</button>
-</div><div class="qres" id="res-q2"></div></div>
-
-<div class="qcard"><div class="qq">Q3. 清が漢人男性に強制した満洲人の風習は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q3',false)">科挙の受験</button>
-  <button class="qbtn" onclick="ans(this,'q3',true)">辮髪（弁髪）</button>
+<div class="qcard">
+  <div style="font-size:14px;font-weight:500;">Q3. <ruby>清<rt>しん</rt></ruby>が漢人男性に強制したのは？</div>
+  <button class="qbtn" onclick="ans(this,'q3',false)"><ruby>科挙<rt>かきょ</rt></ruby>の受験</button>
+  <button class="qbtn" onclick="ans(this,'q3',true)"><ruby>辮髪<rt>べんぱつ</rt></ruby>（<ruby>弁髪<rt>べんぱつ</rt></ruby>）</button>
   <button class="qbtn" onclick="ans(this,'q3',false)">チベット仏教への改宗</button>
-</div><div class="qres" id="res-q3"></div></div>
-
-<div class="qcard"><div class="qq">Q4. 清がヨーロッパ船の来航を1757年以降に限定した港は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q4',false)">北京</button>
-  <button class="qbtn" onclick="ans(this,'q4',false)">上海</button>
-  <button class="qbtn" onclick="ans(this,'q4',true)">広州</button>
-</div><div class="qres" id="res-q4"></div></div>
-
-<div class="qcard"><div class="qq">Q5. 1635年、江戸幕府が諸大名に義務づけた制度は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q5',false)">寺請制度</button>
-  <button class="qbtn" onclick="ans(this,'q5',true)">参勤交代</button>
-  <button class="qbtn" onclick="ans(this,'q5',false)">朝貢制度</button>
-</div><div class="qres" id="res-q5"></div></div>
-
-<div class="qcard"><div class="qq">Q6. 江戸時代の輸出品の変化として正しい順は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q6',false)">銅 → 銀 → 俵物（海産物）</button>
-  <button class="qbtn" onclick="ans(this,'q6',true)">銀 → 銅 → 俵物（海産物）</button>
-  <button class="qbtn" onclick="ans(this,'q6',false)">俵物 → 銀 → 銅</button>
-</div><div class="qres" id="res-q6"></div></div>
-
-<div class="qcard"><div class="qq">Q7. 「4つの窓口」のうち、アイヌとの交易を担当したのは？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q7',false)">対馬藩</button>
-  <button class="qbtn" onclick="ans(this,'q7',false)">薩摩藩</button>
-  <button class="qbtn" onclick="ans(this,'q7',true)">松前藩</button>
-</div><div class="qres" id="res-q7"></div></div>
-
-<div class="qcard"><div class="qq">Q8. 琉球王国を1609年に征服した藩は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q8',false)">対馬藩（宗氏）</button>
-  <button class="qbtn" onclick="ans(this,'q8',true)">薩摩藩（島津氏）</button>
-  <button class="qbtn" onclick="ans(this,'q8',false)">松前藩</button>
-</div><div class="qres" id="res-q8"></div></div>
-
-<div class="qcard"><div class="qq">Q9. 「昆布ロード」のルートとして正しいのは？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q9',false)">昆布が長崎からオランダに輸出された</button>
-  <button class="qbtn" onclick="ans(this,'q9',true)">蝦夷地の昆布が西廻り航路で大坂→九州→琉球→中国に流通した</button>
-  <button class="qbtn" onclick="ans(this,'q9',false)">昆布は朝鮮への輸出品だった</button>
-</div><div class="qres" id="res-q9"></div></div>
-
-<div class="qcard"><div class="qq">Q10. 広州（清）と長崎（日本）の貿易管理の共通点は？</div>
-<div class="qopts">
-  <button class="qbtn" onclick="ans(this,'q10',false)">どちらも民間業者が自由に管理していた</button>
-  <button class="qbtn" onclick="ans(this,'q10',false)">どちらもキリスト教の布教と一体で行われた</button>
-  <button class="qbtn" onclick="ans(this,'q10',true)">特定の港1か所に貿易を限定し、政府が厳しく管理・監視した</button>
-</div><div class="qres" id="res-q10"></div></div>
-
-<div id="final" style="display:none;" class="final-box">
-  <div class="final-big" id="fscore">0/10</div>
-  <div style="font-size:15px;color:#5F5E5A;margin-top:6px;" id="fmsg"></div>
-  <button class="reset-btn" onclick="resetQ()">もう一度チャレンジ！</button>
+  <div class="qres" id="res-q3" style="display:none;"></div>
 </div>
 
-</div><!-- end quiz -->
-</div><!-- end container -->
+<div class="qcard">
+  <div style="font-size:14px;font-weight:500;">Q4. 江戸の4つの窓口でアイヌを担当したのは？</div>
+  <button class="qbtn" onclick="ans(this,'q4',false)"><ruby>薩摩藩<rt>さつまはん</rt></ruby></button>
+  <button class="qbtn" onclick="ans(this,'q4',false)"><ruby>対馬藩<rt>つしまはん</rt></ruby></button>
+  <button class="qbtn" onclick="ans(this,'q4',true)"><ruby>松前藩<rt>まつまえはん</rt></ruby></button>
+  <div class="qres" id="res-q4" style="display:none;"></div>
+</div>
+
+<div class="qcard">
+  <div style="font-size:14px;font-weight:500;">Q5. 「昆布ロード」の最終目的地は？</div>
+  <button class="qbtn" onclick="ans(this,'q5',false)">オランダ</button>
+  <button class="qbtn" onclick="ans(this,'q5',false)">朝鮮</button>
+  <button class="qbtn" onclick="ans(this,'q5',true)">中国</button>
+  <div class="qres" id="res-q5" style="display:none;"></div>
+</div>
+
+<div id="final" style="display:none;margin-top:8px;">
+  <div class="panel panel-yellow" style="text-align:center;padding:20px;">
+    <div class="sfx" id="final-sfx" style="font-size:28px;">おめでとう！</div>
+    <div style="font-size:28px;font-weight:500;margin:10px 0;" id="final-score">0/5</div>
+    <div style="font-size:14px;color:#5F5E5A;" id="final-msg"></div>
+    <button class="qbtn" style="width:auto;display:inline-block;margin-top:12px;padding:8px 24px;" onclick="resetQ()">もう一度チャレンジ！</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+</div>
 
 <script>
-function sp(n){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('page-'+n).classList.add('active');
-  var map={summary:0,edo:1,ryukyu:2,quiz:3};
-  document.querySelectorAll('.tab')[map[n]].classList.add('active');
-  window.scrollTo(0,0);
-}
 var score=0,done={};
 function ans(btn,qid,ok){
   if(done[qid])return;
@@ -396,19 +610,24 @@ function ans(btn,qid,ok){
   if(ok){
     btn.classList.add('ok');score++;
     document.getElementById('sc').textContent=score;
-    res.className='qres rok';res.textContent='✓ 正解！よくできました！';
+    res.className='qres qres-ok';
+    res.textContent='正解！やるじゃん！';
   }else{
     btn.classList.add('ng');
-    res.className='qres rng';res.textContent='✗ 不正解… 解説タブを確認しよう！';
+    res.className='qres qres-ng';
+    res.textContent='残念！解説コマを読み直そう！';
     btns.forEach(function(b){
       if(b.getAttribute('onclick')&&b.getAttribute('onclick').indexOf('true')>-1)b.classList.add('ok');
     });
   }
-  if(Object.keys(done).length===10){
-    var f=document.getElementById('final');f.style.display='block';
-    document.getElementById('fscore').textContent=score+'/10';
-    var msgs=['もう一度復習しよう！','惜しい！あと少し！','よくできました！','満点！完璧です！'];
-    document.getElementById('fmsg').textContent=msgs[score<=4?0:score<=6?1:score<=9?2:3];
+  if(Object.keys(done).length===5){
+    document.getElementById('final').style.display='block';
+    document.getElementById('final-score').textContent=score+'/5';
+    var sfx=['…もう一回！','惜しい！','なかなか！','完璧！'];
+    var msg=['解説をもう一度読んでみよう','あと少しで満点！','よく覚えてる！','歴史マスター認定！'];
+    var i=score<=1?0:score<=3?1:score<=4?2:3;
+    document.getElementById('final-sfx').textContent=sfx[i];
+    document.getElementById('final-msg').textContent=msg[i];
   }
 }
 function resetQ(){
